@@ -1,0 +1,50 @@
+<html>
+<head>
+<title></title>
+<link href='external.css' rel='StyleSheet'/>
+<script type="text/javascript">
+    function checkbutton(obj)
+    {
+        document.getElementById('whatbutton').value=obj;
+    }
+</script>
+</head>
+<body>
+<form id='f1'>
+    <input type="text" style="display: none;" id="whatbutton" name="whatbutton"/>
+
+<table border='2' align='center'>
+    <tr>
+        <td colspan="2">
+            <a href="{%url 'addproduct' %}">Add New Product</a>
+        </td>
+    </tr>
+<tr>
+    <td>Product Id</td>
+    <td>Product Name</td>
+    <td>Price</td>
+    <td>Quantity</td>
+</tr>
+{%for x in products %}
+<tr>
+    <td>{{x.pid}}</td>
+    <td>{{x.pname}}</td>
+    <td>{{x.price}}</td>
+    <td>{{x.quantity}}</td>
+    <td><a href="{%url 'editproduct' x.pid %}" name="Edit">
+    Edit</a>
+    </td>
+    <td>
+        <a href="{%url 'deleteproduct' x.pid %}" name="Delete">
+    Delete</a>
+    
+    </td>
+</tr>
+{%endfor%}
+<tr></tr>
+</table>
+</form>
+</body>
+</html>
+
+

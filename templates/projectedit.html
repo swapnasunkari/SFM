@@ -1,0 +1,140 @@
+{%extends 'design.html'%}
+{%load static%}
+<html>
+<head>
+    {%block content%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title></title>
+<style>
+    /* Apply styles to the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background-color:#fff; /* Light gray background */
+    
+}
+
+/* Style the form container */
+form {
+    border-radius: 3%;
+    position:absolute;
+    top:15%;
+    margin-left: 40%;
+    max-width: 600px; /* Set a maximum width for the form */
+    padding: 40px;
+    background-color: #a5ee69b9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style form elements */
+input[type='text'],
+input[type='datetime-local'],
+input[type='submit'],
+input[type='button'] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style labels */
+td.exstyle {
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+/* Style the 'Update' button */
+input[type='submit'] {
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type='submit']:hover {
+    background-color: #0056b3;
+}
+
+/* Style the 'Clear' button */
+input[type='button'] {
+    background-color: #ccc;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type='button']:hover {
+    background-color: #999;
+}
+
+</style>
+</head>
+<body>
+<form  method="POST">
+{%csrf_token%}
+    
+{{sid}}
+<table  align='center'>
+    <tr>
+        <td class='exstyle'>Donor name</td>
+        <td>
+        <input type='text' id='name' name='name' value="{{d.name}}"/>
+        </td>
+        </tr> 
+        <tr>
+            <td class='exstyle'>Phone no</td>
+            <td>
+            <input type='text' id='phone' name='phone' value="{{d.phone}}"/>
+            </td>
+            </tr>
+        <tr>
+            <tr>
+                <td class='exstyle'>Email</td>
+                <td>
+                <input type='text' id='email' name='email' value="{{d.email}}"/>
+                </td>
+                </tr>
+            <tr>
+    
+    <tr>
+    <td class='exstyle'>FoodType</td>
+    <td>
+    <input type='text' id='foodType' name='foodType' value="{{d.foodType}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>Quantity</td>
+    <td>
+    <input type='text' id='quantity' name='quantity' value="{{d.quantity}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>uploadtime</td>
+    <td>
+    <input type='datetime-local' id='uploadtime' name='uploadtime' value="{{d.uploadtime}}"/>
+    </td>
+    </tr>
+<tr>
+    <td class='exstyle'>location</td>
+    <td>
+    <input type='text' id='address' name='address' value="{{d.address}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <input type='submit'  id='b1' name='b1' onclick="checkbutton('update')"  value='Update'/>
+    </td>
+    <td>
+    <input type='button' id='b3' name='b3' value='clear'/>
+    </td>
+    </tr>
+    </table>
+</form>
+{%endblock%}
+</body>
+</html>
+
+

@@ -1,0 +1,52 @@
+{%load static%}
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>home page</title>
+  <link rel="stylesheet" href="{%static 'project.css'%}">
+  <link rel="icon"  type="x-favicon" href="{%static 'sfm4.png'%}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </head>
+    <body>
+        <div class="image">
+            
+    </div>
+    <div class="text"><h1>Your Donation <br>Other's Inspiration</h1></div>
+    <div class="btn"><button class="stylish"><a href="{%url 'projectdonar'%}">Donate now </a></button></div>
+          <nav class="navbar">
+            <div class="container">
+                <h2><span>SURPLUS FOOD</span></a></h2>
+                <ul class="nav-links">
+                    <li><a href="">Home</a></li>
+                    <li><a href="{%url 'projectdonar'%}">Donor form</a></li>
+                       <li><a href="{%url 'projectabout'%}">How to use?</a></li>
+                        <li><a href="{%url 'projectlogin'%}">Orphanage login</a></li>
+                </ul>
+            </div>
+        </nav>
+           <div class="ab">
+                <div class="inner-section">
+                                       <h1>About Us</h1>
+                    <p class="tt">
+                        Welcome to Surplus Food Management, where compassion meets surplus, and generosity
+             knows no boundaries. Our story is one of community, kindness,
+             and a shared vision to make a difference in the lives of those less fortunate.
+             At surplus food Management, we believe that every meal can be an opportunity
+              to create a better world. We're on a mission to ensure that no edible food goes to waste,
+               especially when it can nourish those who need it the most.
+               <h3>Join us in spreading Love and Food</h3>
+        <p>We invite you to be part of our journey. Whether you're a potential donor,
+             a recipient, or someone who simply wants to support our cause, there's a
+              place for you here. Together, we can turn surplus into sustenance.
+                    </p>
+                    <div class="skills">
+                        <button>oursfmteam@gmail.com</button>
+                    </div>
+                </div>
+            </div>
+           <div class="c" ><a href="{%url 'adminlogin'%}"><img src="{%static 'mainlogo.png'%}"></a></div>
+    </body></html>

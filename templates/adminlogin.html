@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin login</title>
+  <link rel="stylesheet" href="{%static 'adminlogin.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <form method="POST">
+    {%csrf_token%}
+  <div class="inFormBackground">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="inLoginForm">
+      <form onsubmit="return false">
+        <div class="title">
+          <h3>Login Here</h3>
+        </div>
+        <div class="inputGroup">
+          <label for="email">Email</label>
+          <input type="email" id="email"  name="email" placeholder="Enter Email" id="email" required>
+        </div>
+        <div class="inputGroup">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter Password" id="password" required>
+        </div>
+        <button class="submitForm" onclick="validateForm">Log In</button>
+    </div>
+  </div>
+  </form>
+  <script>
+function validateForm(){
+  var username=document.getElementById("email").value;
+  var password=document.getElementById("password").value;
+  if(username==="sunkariswapna.2401@gmail.com" && password==="12345678")
+  {
+  alert('login successful!');}
+ else{
+ document.getElementById("errormsg").style.display="block";}
+}
+
+  </script>
+  <p id="errormsg" style="color:red; display:none;">Invalid Credentials</p>
+</body>
+
+</html>

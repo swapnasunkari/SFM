@@ -1,0 +1,68 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login From</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="{%static 'projectlogin.css'%}" />
+  </head>
+  <body>
+    <form method="POST" enctype="multipart/form-data" onsubmit="return validate();">
+      {%csrf_token%}
+    <div class="login_form_container">
+      <div class="login_form">
+        <h2>Login</h2>
+        <div class="input_group">
+          <i class="fa fa-user"></i>
+          <input type="email" id="em" name="em" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          placeholder="Gmail" class="input_text" autocomplete="on" required/>
+        </div>
+        <div class="input_group">
+          <i class="fa fa-unlock-alt"></i>
+          <input type="password" id="pwd" name="pwd" placeholder="Password" class="input_text" autocomplete="off" required/>
+        </div>
+        <div class="button_group" id="login_button" align="center">
+          <button type="submit" class="clkbtn">Login</button>
+        </div>
+        <div class="fotter">
+          <a href="{%url 'forgotpassword' %}">Forgot Password ?</a>
+          <a href="{%url 'projectreg'%}"> Sign up!</a>
+        </div>
+      </div>
+    </div>
+</form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="login.js"></script>
+    <script>
+        $(".input_text").focus(function(){
+    $(this).prev('.fa').addclass('glowIcon')
+         })
+     $(".input_text").focusout(function(){
+        $(this).prev('.fa').removeclass('glowIcon')
+     })
+
+     function validate() {
+        var em  = document.getElementById('em').value;
+        var pwd = document.getElementById('pwd').value;
+
+        if(em =='') {
+          alert("email is required");
+          return false;
+        }
+        else if(pwd =='') {
+          alert("password is required");
+          return false;
+        }
+        else if (pwd.length < 8) {
+          alert("Password must be at least 8 characters long");
+          return false;
+        }
+      }
+
+     </script>
+     </body>
+     </html>

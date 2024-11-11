@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>header</title>
+    <style>
+        /* Style the navigation bar */
+.navbar {
+    text-decoration: none;
+    margin-top:-24px;
+    background-color: transparent;
+    position:fixed;
+    width: 100%;
+    top: 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.sticky {
+    background-color: rgba(0, 0, 0, 0.8); /* Add transparency for the sticky navbar */
+    position: fixed;
+}
+
+.contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111111;
+    font-weight:bolder;
+}
+
+.nav-links ul li a:hover {
+color:crimson;
+}
+h2 a {
+    text-decoration: none;
+color: #111111;
+
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="contain">
+            <h2><a href="{%url 'projectindex'%}"><i class="fa-solid fa-plate-wheat"></i>SURPLUS FOOD</a></h2>
+            <ul class="nav-links">
+                <li><a href="{%url 'projectindex'%}">Home</a></li>
+                <li><a href="{%url 'projectdonar'%}">Donor form</a></li>
+                   <li><a href="{%url 'projectabout'%}">How to use?</a></li>
+                    <li><a href="{%url 'projectlogin'%}">Orphanage login</a></li>
+                    
+            </ul>
+        </div>
+    </nav> 
+</body>
+</html>
+{%block content%}
+{%endblock%}

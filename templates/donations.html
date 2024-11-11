@@ -1,0 +1,149 @@
+{%extends 'header.html'%}
+{%load static%}
+<html>
+<head>
+    {%block content%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title></title>
+<link href='external.css' rel='StyleSheet'/>
+<script type="text/javascript">
+    function checkbutton(obj)
+    {
+        document.getElementById('whatbutton').value=obj;
+    }
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond:ital,wght@1,500&family=Gelasio:ital,wght@1,500&family=Great+Vibes&family=Mate+SC&family=Merriweather:ital@1&family=Overlock+SC&family=Simonetta&family=Tangerine:wght@700&display=swap');
+    /* Add your styles here */
+body {
+    background-image: url("{%static 'donate.jpg'%}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Overlock SC', cursive;
+    margin-top:7%;
+    padding: 0;
+}
+.nav-links a{
+    color:white;
+}
+.contain h2 a{
+    color: white;
+    font-weight: bold;
+}
+td a{
+    text-decoration: none;
+    color:rgb(245, 36, 36);
+    padding: 10px 10px;
+
+}
+td a:hover{
+    transition: 1s;
+    background:cover;
+    background-color: crimson;
+    color:#fff;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+table {
+    font-family: 'Simonetta', cursive;
+
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+table, td {
+    border: 1px solid #dbd1d94f;
+    padding: 10px;
+    text-align: left;
+}
+th{
+    text-align: center;
+    background-color: rgb(248, 121, 184);
+    color:#0e0d0d;
+    padding: 10px;
+}
+p{
+    color: #fff;
+    font-weight: bold;
+}
+a{
+    color: #fff;
+}
+ul li{
+    color: #fff;
+}
+/* Add more styles as needed */
+div h4{
+    background-color: #fff;
+    border-radius: 20%;
+    padding:5px;
+    float:right;
+    margin-right: 33%;
+    margin-top: -173px;
+}
+div h4 a{
+    color: #0e0d0d;
+    text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+    
+<h1>Donations</h1>
+<p align="center"><b>NOTE:please do click on the request button , before contacting the donor</b></p>
+<form method="POST">
+    {%csrf_token%}
+
+<input type="text" style="display: none;" id="whatbutton" name="whatbutton"/>
+<table border='2' align='center'>
+           
+              <div><h4><a href="{%url 'logout' %}">Logout</a></h4></div>
+        
+    
+<tr>
+    <th>Donor Id</th>
+    <th>Donor Name</th>
+    <th>phone no</th>
+    <th>Email</th>
+    <th>FoodType</th>
+    <th>Quantity</th>
+    <th>uploadedtime</th>
+    
+    <th>location</th>
+    <th>Click Here</th>
+</tr>
+
+ 
+            {% for x in donations %}
+                <tr>
+                    <td>{{ x.0 }}</td>
+                    <td>{{ x.1 }}</td>
+                    <td>{{ x.2}}</td>
+                    <td>{{ x.3 }}</td>
+                    <td>{{ x.4 }}</td>
+                    <td>{{ x.5 }}</td>
+                    <td>{{ x.6 }}</td>
+                    <td>{{ x.7}}</td>
+                    <td><a href="{%url 'orphanrequest' x.0 %}" name="request" class="req">request</a></td>
+    
+                    
+                </tr>
+            {% endfor %}
+</table>
+</form>
+{%endblock%}
+</body>
+</html>
+
+

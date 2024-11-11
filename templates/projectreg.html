@@ -1,0 +1,92 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Registration Form
+     </title>
+     <link rel="stylesheet" href="{%static 'projectreg.css' %}">
+   </head>
+   <script>
+    function validate() {
+      var pwd = document.getElementById('pwd').value;
+      var cpwd = document.getElementById('cpwd').value;
+
+      if (pwd.length < 8) {
+        alert("Password must be at least 8 characters long");
+        return false;
+      }
+
+      if (pwd !== cpwd) {
+        alert("Passwords do not match");
+        return false;
+      }
+    }
+  </script>
+
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form method="POST" enctype="multipart/form-data" onsubmit="return validate();">
+        {%csrf_token%}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="org">Organization Name</span>
+            <input type="text" id="org" name="org" placeholder="Enter your Organization name" autocomplete="on" required>
+          </div>
+          <div class="input-box">
+            <span class="phn">Phone number</span>
+            <input type="text" id="phone" name="phnnum"   pattern="[6-9]\d{9}" placeholder="Enter your phone number" autocomplete="on" required>
+          </div>
+          <div class="input-box">
+            <span class="myfile">organization document</span>
+                <input type="file" id="myfile" name="myfile" placeholder="Choose a file" autocomplete="on" required> 
+          </div>
+        <div class="input-box">
+          <span class="hno">Hno/flatno/roadno</span>
+          <input type="text" id="hno" name="hno" placeholder="Enter your address" autocomplete="on" required>
+        </div>
+        <div class="input-box">
+          <span class="loc">Locality</span>
+          <input type="text" id="loc" name="loc" placeholder="Enter your locality" autocomplete="on" required>
+        </div>
+        <div class="input-box">
+          <span class="dist">District</span>
+          <input type="text" id="dist" name="dist" placeholder="Enter your District" autocomplete="on" required>
+        </div>
+        <div class="input-box">
+          <span class="st">State</span>
+          <input type="text" id="st" name="st" placeholder="Enter your State" autocomplete="on" required>
+        </div>
+          <div class="input-box">
+            <span class="em">Email</span>
+            <input type="text" id="em" name="em" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+            placeholder="Enter your email" autocomplete="on" required>
+          </div>
+          <div class="input-box">
+            <span class="pwd">Password</span>
+            <input type="text" id="pwd" name="pwd" placeholder="Enter your password" autocomplete="on" required>
+          </div>
+          <div class="input-box">
+            <span class="cpwd">Confirm Password</span>
+            <input type="text" id="cpwd" name="cpwd" placeholder="Confirm your password" autocomplete="on" required>
+            
+          </div>
+        <div class="button">
+          <input type="reset" value="Clear">
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        <div class="buttonlogin" style="text-decoration: none;">
+          <a href="{%url 'projectlogin'%}">Login</a>
+        </div>
+      </div>
+      </form>
+    <p><b>NOTE</b>: The login's will be actived after two days of registration,this is because to verify the organization</p>
+    
+  </div>
+</body>
+</html>

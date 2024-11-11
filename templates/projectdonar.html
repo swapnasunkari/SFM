@@ -1,0 +1,129 @@
+{%extends 'header.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%block content%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'projectdonor.css'%}"/>
+    <title>Food Donation Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Food Donation Form</h2>
+        <form method="POST">
+            {%csrf_token%}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[6-9]\d{9}" placeholder="Enter Your Phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                required></td>
+            </div>
+            <div class="form-group">
+                <label for="food-type">Type of Food:</label>
+                 <select id="foodType" name="foodType" required>
+                    
+              <option value="vegetarian">Vegetarian</option>
+              <option value="non-vegetarian">Non-Vegetarian</option>
+              <option value="both">Both</option>
+          </select>
+              
+            </div>
+            <div class="form-group">
+                <label for="food-quantity">Quantity of Food:</label>
+<select id="quantity" name="quantity" required>
+              <option value="as per kg">As per Kg</option>
+              <option value="as per packet/person">As per packet/person</option>
+              <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+              
+</select>      
+            </div>
+            <div class="form-group">
+                <label for="upload-date-time">Upload Date and Time:</label>
+                <input type="datetime-local" id="uploadtime" name="uploadtime" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Location</label>
+                <textarea id="address" name="address" rows="4"  placeholder="Location" required></textarea>
+            </div>
+            <div class="form-group" align="center">
+              <div class="btn"><input type="submit" id="b1" name="b1" value="Submit" onclick='return validate()' />
+                <input type='reset' id='b2' name='b2' value='Clear' onclick='clearfields()' />
+             <a href="{%url 'donordetails'%}" class="button">view donors</a></div>
+            </div>
+        </form>
+    </div>
+      
+    <script type='text/javascript'>
+        function validate() {
+            var name= document.getElementById("name").value;
+            if (name == "") {
+                alert("Please enter name");
+                return false;
+            }
+            var email = document.getElementById("email").value;
+            if (email == "") {
+                alert("Please enter email id");
+                return false;
+            }
+         /*   var phone = document.getElementById("phone").value;
+            if (phone == "") {
+                alert("Please enter phone number");
+                return false;
+            }*/
+            var foodType = document.getElementsByName("foodType");
+            var val = "";
+            for (var i = 0; i < t.length; i++) {
+                if (foodType[i].checked == true) {
+                    val = foodType[i].value;
+                    break;
+                }
+            }
+            if (val == "") {
+                alert("Please select type of food");
+                return false;
+            }
+            document.getElementById('quantity').value = val;
+            var quantity = document.getElementById("quantity").value;
+            if (quantity == "Select") {
+                alert("Please select quantity of food");
+                return false;
+            }
+          /* var address = document.getElementById("address").value;
+            if (address== "") {
+                alert("Please enter address");
+                return false;
+            }*/
+        }
+
+        function clearfields() {
+            var t = document.getElementsByName("t");
+            for (var i = 0; i < t.length; i++) {
+                t[i].checked = false;
+            }
+        }
+
+
+
+        // Add this code to your JavaScript
+function toggleMenu() {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var navLinks = document.querySelector('.nav-links');
+
+    menuToggle.classList.toggle('menu-active');
+    navLinks.classList.toggle('show');
+}
+
+    </script>
+</body>
+{%endblock%}
+</html>

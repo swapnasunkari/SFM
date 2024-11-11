@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond:ital,wght@1,500&family=Gelasio:ital,wght@1,500&family=Great+Vibes&family=Mate+SC&family=Tangerine:wght@700&display=swap');
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+.image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.479),rgba(0, 0, 0, 0.479)),url('girl.jpg');
+    background-size: cover;
+    min-width:100vh;
+    min-height:150vh;
+    
+}
+.text{
+    margin-top: -720px;
+    margin-left: 80px;
+    color:#fff;
+    position: absolute;
+    justify-content: center;
+    font-size:xx-large;
+}
+.container img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.c img{
+    position:fixed;
+top:7px;
+    left:40px;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.container h2{
+    font-size: xx-large;
+    margin-left: 80px;
+}
+/* Style the navigation bar */
+.navbar {
+    text-decoration: none;
+    margin-top:-24px;
+    background-color: transparent;
+    position:fixed;
+    width: 100%;
+    top: 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.sticky {
+    background-color: rgba(0, 0, 0, 0.8); /* Add transparency for the sticky navbar */
+    position: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight:bolder;
+    
+}
+.nav-links a:hover{
+    color:#fff;
+}
+
+h2{
+    color:#fff;
+}
+h2 li{
+    color: #fff;
+}
+
+.stylish{
+    background-color: #fff;
+    margin-top: -520px;
+    margin-left: 80px;
+    color:black;
+    position: absolute;
+    padding:10px 20px;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;
+    font: size 16px;
+    transition:background-color 1.2s ease;
+}
+.stylish:hover{
+    background-color: rgba(22, 211, 22, 0.623);
+    transform:scale(1.2);
+}
+.stylish a{
+    text-decoration: none;
+    color: black;
+}
+.we{
+    margin-left: 10%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    background-color:#fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display:block;
+}
+.about{
+
+    border:transparent;
+    
+}
+.about h3{
+    
+    color:brown;
+    font-size: larger;
+    font-weight: bolder;
+}
+.mission{
+    border:transparent;
+}
+.mission h3{
+    color:brown;
+   
+    font-size: larger;
+    font-weight: bolder;
+}
+.love
+{
+    border:transparent;
+}
+.love h3{
+    color:brown;
+    
+    font-weight: bolder;
+}
+p{
+    text-align: justify;
+    font-family: 'Gelasio', serif;
+}
+.contact{
+    background-color: rgba(0, 0, 0, 0.514);
+    align-items: center;
+    color: #fff;
+}
+
+
+
+.navbar h2 a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.ab{
+    background: url('donatabout.png') no-repeat left;
+    background-size: 40%;
+    background-color:rgba(140, 217, 241, 0.425);
+    overflow: hidden;
+    padding: 50px 0;
+    z-index:-1;
+}
+.inner-section{
+    margin-right: 3%;
+    border-radius: 5%;
+    width: 50%;
+    float: right;
+    background-color: #d39393;
+    padding: 45px;
+    box-shadow: 13px 12px 8px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+.inner-section h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.tt{
+    font-weight: bold;
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+.skills button{
+    text-decoration: none;
+    font-size:18px;
+    text-align: center;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    width: 400px;
+    background-color: #00999c;
+    color: white;
+    cursor: pointer;
+}
+.skills button:hover{
+    text-decoration: none;
+    transition: 1s;
+    background-color: #ecf5f5;
+    color: #00999c;
+}
+@media screen and (max-width:1200px){
+    .inner-section{
+        padding: 80px;
+    }
+}
+@media screen and (max-width:1000px){
+    .about{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-section{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about{
+        padding: 0;
+    }
+    .inner-section{
+        padding: 60px;
+    }
+    .skills button{
+        font-size: 19px;
+        padding: 5px;
+        width: 160px;
+    }
+}
+
+

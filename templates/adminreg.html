@@ -1,0 +1,115 @@
+{%extends 'design.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    {%block content%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title></title>
+<script type="text/javascript">
+    function checkbutton(obj)
+    {
+        document.getElementById('whatbutton').value=obj;
+    }
+</script>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=EB+Garamond:ital,wght@1,500&family=Gelasio:ital,wght@1,500&family=Great+Vibes&family=Mate+SC&family=Merriweather:ital@1&family=Overlock+SC&family=Simonetta&family=Tangerine:wght@700&display=swap');
+        /* Add your awesome CSS effects and styles here */
+        body {
+            background-color:white;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            font-family: 'Gelasio', serif;
+
+font-size:small;
+        margin-top:5%;
+            background-color: #fff;
+            margin-left:19%;
+            border-collapse: collapse;
+            border: 1px solid #8b8989;
+        }
+        table td {
+            padding:5px;
+            border: 1px solid #999;
+        }
+        a[name="Edit"],
+        a[name="Delete"],
+        a[name="isactive"] {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Add more styles as needed */
+        th{
+            color:rgb(235, 24, 59);
+        }
+    </style>
+
+</head>
+<body>
+<h1>Organization List</h1>
+<form id='f1'>
+    <input type="text" style="display: none;" id="whatbutton" name="whatbutton"/>
+<table border='1'>
+
+           
+       
+    
+<tr>
+    <th>Sid</td>
+    <th>OrganizationName</th>
+    <th>Phonenumber</th>
+    <th>Hno/flatno/roadno</th>
+    <th>Locality</th>
+    <th>District</th>
+    <th>State</th>
+    <th>Email</th>
+    <th>password</th>
+    <th>orgranazation document</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>isactive</th>
+    
+    
+    
+    
+</tr>
+
+ 
+            {% for x in registers %}
+                <tr>
+                    <td>{{ x.0 }}</td>
+                    <td>{{ x.1 }}</td>
+                    <td>{{ x.2 }}</td>
+                    <td>{{ x.3}}</td>
+                    <td>{{ x.4 }}</td>
+                    <td>{{ x.5 }}</td>
+                    <td>{{ x.6 }}</td>
+                    <td>{{ x.7 }}</td>
+                    <td>{{ x.8}}</td>
+                    
+                    <td>{{ x.9}}</td>
+                    
+                    <td><a href="{%url 'adminregedit' x.0 %}" name="Edit">Edit</a></td>
+                    <td><a href="{%url 'adminregdelete' x.0 %}" name="Delete">Delete</a></td>
+                    <td><a href="{%url 'adminactive' x.0 %}" name="isactive">isactive</a></td>
+
+                    
+    
+                    
+                </tr>
+            {% endfor %}
+</table>
+</form>
+{%endblock%}
+</body>
+</html>
+
+

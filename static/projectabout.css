@@ -1,0 +1,103 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond:ital,wght@1,500&family=Gelasio:ital,wght@1,500&family=Great+Vibes&family=Mate+SC&family=Merriweather:ital@1&family=Simonetta&family=Tangerine:wght@700&display=swap');
+        /* Reset default margins and padding */
+        body, h1, h2, h3, ul, li {
+            margin-top:0;
+            padding: 0;
+        }
+
+        /* Body styles */
+        body {
+            background: linear-gradient(45deg,#3f42f1ab,#f75787a9,#b2e623c0,#2ce7bcb7);
+            background-size: 300% 300%;
+            font-family: 'Simonetta', cursive;
+            margin-top: 8%;
+            padding: 0;
+            animation: color 12s ease-in-out infinite;
+        }
+        @keyframes color{
+            0%{
+                background-position: 0 50%;
+
+            }
+            50%{
+                background-position: 100% 50%;
+
+            }
+            100%{background-position: 0 50%;
+
+            }
+        }
+        
+
+        /* Center align text */
+        body, h2, h1 {
+            text-align: center;
+            font-family: 'Simonetta', cursive;
+
+        }
+
+        /* Title styles */
+        h2 {
+            color: rgb(223, 52, 52);
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: rgb(14, 30, 179);
+            font-size: 32px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Guideline styles */
+        .guidelines {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            font-family: 'Mate SC', serif;
+
+        }
+
+        /* Section title styles */
+        h1, h3 {
+            font-weight: bold;
+            text-decoration: none;
+            color: rgb(39, 14, 131);
+        }
+
+        h3 {
+            color: rgb(9, 129, 39);
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        li {
+            color: rgb(29, 27, 27);
+            margin-bottom: 10px;
+        }
+
+        /* Hover effect for list items */
+        li:hover {
+            color: rgb(228, 67, 75);
+            cursor: pointer;
+        }
+
+        /* Additional styling */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Add more advanced styles here */
+
+   

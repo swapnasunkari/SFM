@@ -1,0 +1,140 @@
+{%extends 'design.html'%}
+{%load static%}
+<html>
+<head>
+    {%block content%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title></title>
+<script type="text/javascript">
+    function checkbutton(obj)
+    {
+        document.getElementById('whatbutton').value=obj;
+    }
+</script>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script&family=EB+Garamond:ital,wght@1,500&family=Gelasio:ital,wght@1,500&family=Great+Vibes&family=Mate+SC&family=Merriweather:ital@1&family=Overlock+SC&family=Simonetta&family=Tangerine:wght@700&display=swap');
+        /* External CSS - external.css */
+
+/* Apply styles to the entire body */
+
+
+/* Style the header */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Style the navigation bar */
+
+
+/*.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Style the table */
+table {
+    font-family: 'EB Garamond', serif;
+
+    margin-right:10%;
+    background-color: #fff;
+    width: 40%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+table, th, td {
+    border: 1px solid #837f7f;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style links */
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #c40c0cf6;
+}
+
+/* Add hover effect to links */
+a:hover {
+    color: #160757;
+}
+th{
+    color: blueviolet;
+    font-weight: bold;
+}
+.cs {
+    background-color:aqua ;
+}
+.cs:hover{
+    transition: 0.2s ease-in-out;
+}
+
+    </style>
+    
+<h1>Donations</h1>
+<form id='f1'>
+    <input type="text" style="display: none;" id="whatbutton" name="whatbutton"/>
+
+<table border='2' align='center'>
+    <tr>
+        <td colspan="10" class="cs">
+            <div  align="center">
+            <a href="{%url 'projectnewdonation' %}">Add New Donation</a></div>
+
+        </td>
+    </tr> 
+           
+       
+    
+<tr>
+    <th>Donor Id</th>
+    <th>Donor Name</th>
+    <th>phone no</th>
+    <th>Email</th>
+    <th>FoodType</th>
+    <th>Quantity</th>
+    <th>uploadedtime</th>
+    <th>location</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</tr>
+
+ 
+            {% for x in donations %}
+                <tr>
+                    <td>{{ x.sid }}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.phone }}</td>
+                    <td>{{ x.email }}</td>
+                    <td>{{ x.foodType }}</td>
+                    <td>{{ x.quantity }}</td>
+                    <td>{{ x.uploadtime }}</td>
+                    <td>{{ x.address}}</td>
+                    <td><a href="{%url 'projectedit' x.sid %}" name="Edit">Edit</a>
+    </td>
+    <td>
+        <a href="{%url 'deletedonation' x.sid %}" name="Delete">
+    Delete</a>
+    
+                    
+                </tr>
+            {% endfor %}
+</table>
+</form>
+{%endblock%}
+</body>
+</html>
+
+

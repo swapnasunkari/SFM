@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" href="{%static 'style.css'%}"/>
+
+</head>
+
+<body style="background-color: rgb(253, 250, 252);">
+    <img src="https://thumbs.dreamstime.com/b/heart-shape-various-vegetables-fruits-healthy-food-concept-isolated-white-background-140287808.jpg" width="20%" alt="codedamn logo" />
+     <div class="container" >
+        <h1>CERTIFICATE</h1>
+        <form id="certificate-form">
+            <label for="recipientName">Donor Name:</label>
+            <input type="text" id="recipientName" required>
+            <button type="submit">Generate Certificate</button>
+        </form>
+        <div class="certificate" id="certificate">
+            <!-- Generated certificate content will be inserted here -->
+        </div>
+    </div
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="{%static 'script.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+{%extends 'design.html'%}
+{%load static%}
+<html>
+<head>
+    {%block content%}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<style>
+    /* Reset some default styles to ensure consistency */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the form container */
+form {
+    position:fixed;
+    top:12%;
+margin-left: 40%;
+    max-width: 500px;
+    padding: 5px;
+    background-color: #fff;
+    border: 2px solid #e64141;
+    border-radius: 5px;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style table cells (td) */
+td {
+    padding: 10px;
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding:4px;
+    border: 2px solid #38cfe9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style the submit and reset buttons */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the buttons on hover */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the OrganizationName and Phonenumber labels */
+.exstyle {
+    font-weight: bold;
+    color: #fc17a4;
+}
+.exstyle:hover{
+    color: darkorchid;
+}
+
+</style>
+</head>
+<body>
+<form  method="POST" enctype="multipart/form-data">
+{%csrf_token%}
+    
+{{sid}}
+<table  align='center'>
+    <tr>
+        <td class='exstyle'>OrganizationName</td>
+        <td>
+        <input type='text' id='org' name='org' value="{{r.orgname}}"/>
+        </td>
+        </tr> 
+        <tr>
+            <td class='exstyle'>Phonenumber</td>
+            <td>
+            <input type='text' id='phone' name='phone' value="{{r.phnnum}}"/>
+            </td>
+            </tr>
+        
+    
+    <tr>
+    <td class='exstyle'>Hno/flatno/roadno</td>
+    <td>
+    <input type='text' id='hno' name='hno' value="{{r.hno}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>Locality</td>
+    <td>
+    <input type='text' id='loc' name='loc' value="{{r.locality}}"/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>District</td>
+    <td>
+    <input type='text' id='dist' name='dist' value="{{r.district}}"/>
+    </td>
+    </tr>
+<tr>
+    <td class='exstyle'>State</td>
+    <td>
+    <input type='text' id='st' name='st' value="{{r.state}}"/>
+    </td></tr>
+    <tr>
+    <td class='exstyle'>Email</td>
+    <td>
+    <input type='text' id='em' name='em' value="{{r.email}}"/>
+    </td>
+    </tr><tr>
+    <td class='exstyle'>Password</td>
+    <td>
+    <input type='text' id='pwd' name='pwd' value="{{r.password}}"/>
+    </td></tr>
+    
+    <tr>
+            <td class='exstyle'>Organization document</td>
+            <td>
+            <input type='file' id='myfile' name='myfile' value="{{r.uploadedfile}}"/>
+            </td>
+    </tr>
+       
+    <tr>
+    <td>
+    <input type='submit'  id='b1' name='b1' onclick="checkbutton('update')"  value='Update'/>
+    </td>
+    
+    <td>
+    <input type='reset' id='b3' name='b3' value='clear' onclick='clearfields()'/>
+    </td>
+    </tr>
+    </table>
+</form>
+{%endblock%}
+</body>
+</html>
+
+

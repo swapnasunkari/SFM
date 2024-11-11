@@ -1,0 +1,43 @@
+<html>
+<head>
+<title></title>
+<link href='external.css' rel='StyleSheet'/>
+
+</head>
+<body>
+<form id='f1' method="POST">
+    {%csrf_token%}
+{{pid}}
+<table border='2' align='center'>
+    <tr>
+    <td class='exstyle'>Product Name</td>
+    <td>
+    <input type='text' id='pname' name='pname' required/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>Price</td>
+    <td>
+    <input type='text' id='price' name='price' required/>
+    </td>
+    </tr>
+    <tr>
+    <td class='exstyle'>Quantity</td>
+    <td>
+    <input type='text' id='quantity' name='quantity' required/>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <input type='submit'  id='b1' name='b1' value='Add Product'/>
+    </td>
+    <td>
+    <input type='button' id='b3' name='b3' value='clear'/>
+    </td>
+    </tr>
+    </table>
+</form>
+</body>
+</html>
+
+
